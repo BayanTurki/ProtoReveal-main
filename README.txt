@@ -28,6 +28,10 @@ INSTALLATION
 ### Option 1: Docker Compose (recommended)
 
 ```bash
+# Clone the repository
+git clone https://github.com/BayanTurki/ProtoReveal-main.git
+cd ProtoReveal-main
+
 # Start the container
 docker-compose up --build -d
 
@@ -38,6 +42,7 @@ docker-compose up --build -d
 docker exec -it protoreveal-ae /app/download_models.sh
 
 # 1. Run analysis command + save output
+# Note: angr warnings are normal and expected - just wait for results
 docker exec -it protoreveal-ae python3 ./artifact/ProtoReveal/analysis.py artifact/data/NUC230240/NUC240_ADC_Median_Filter.bin armcortexm predict 0x40000000 0x5FFFFFFF
 docker cp protoreveal-ae:/app/prediction.csv .
 docker cp protoreveal-ae:/app/prediction.json .
@@ -58,34 +63,41 @@ docker-compose down
 - `Result_1.csv` - Generated from prediction command
 - `Level3_PrePredict.csv` - Generated from analysis command
 
+
+
 ### Option 2: Native Installation (Linux)
 
 ```bash
-# Step 1: Make script executable
+# Step 1: Clone the repository
+git clone https://github.com/BayanTurki/ProtoReveal-main.git
+cd ProtoReveal-main
+
+# Step 2: Make script executable
 chmod +x install.sh
 
-# Step 2: Run installation (requires sudo)
+# Step 3: Run installation (requires sudo)
 sudo ./install.sh
 
-# Step 3: Verify installation
+# Step 4: Verify installation
 python3 -c "import angr, cle, pyvex, pandas, sklearn; print('All dependencies installed successfully!')"
 
-# Step 4: Download ML models (required for prediction)
+# Step 5: Download ML models (required for prediction)
 # Models: 
 # - predictor.pt (286MB): https://drive.google.com/file/d/1a5RdhCNvRFBgp9cJAjXggrC-Rr7xhbx2/view?usp=sharing
 # - random_forest_model.pt (255MB): https://drive.google.com/file/d/18uyO3lZ8Z8mAsYmhObMEYtBm0BZ4cog1/view?usp=sharing
 ./download_models.sh
 
-# Step 5: Run analysis command
+# Step 6: Run analysis command
+# Note: angr warnings are normal and expected - just wait for results
 python3 ./artifact/ProtoReveal/analysis.py artifact/data/NUC230240/NUC240_ADC_Median_Filter.bin armcortexm predict 0x40000000 0x5FFFFFFF
 
-# Step 6: Run test command
+# Step 7: Run test command
 python3 ./artifact/ProtoReveal/test.py LoadFuncToSRAM.bin test
 
-# Step 7: Run prediction command
+# Step 8: Run prediction command
 python3 ./artifact/ProtoReveal/train/Predict_.py
 
-# Step 8: Check output files
+# Step 9: Check output files
 ls -la *.csv *.json
 ```
 
@@ -96,32 +108,46 @@ ls -la *.csv *.json
 
 **❌ This will NOT work on macOS or Windows!** For macOS/Windows, use Docker Compose (Option 1) or Cross-Platform Installation (Option 3).
 
+
+
+
+
 ### Option 3: Cross-Platform Installation (macOS/Windows/Linux)
 
 **For users who want to install dependencies directly without Docker:**
 
 ```bash
-# Step 1: Install Python 3.9+ (if not already installed)
+# Step 1: Clone the repository
+git clone https://github.com/BayanTurki/ProtoReveal-main.git
+cd ProtoReveal-main
+
+# Step 2: Install Python 3.9+ (if not already installed)
 # macOS: brew install python3
 # Windows: Download from python.org
 # Linux: sudo apt-get install python3 python3-pip
 
-# Step 2: Install Python dependencies
+# Step 3: Install Python dependencies
 pip3 install -r requirements.txt
 
-# Step 3: Verify installation
+# Step 4: Verify installation
 python3 -c "import angr, cle, pyvex, pandas, sklearn; print('All dependencies installed successfully!')"
 
-# Step 4: Run analysis command
+# Step 5: Download ML models (required for prediction)
+# Models: 
+# - predictor.pt (286MB): https://drive.google.com/file/d/1a5RdhCNvRFBgp9cJAjXggrC-Rr7xhbx2/view?usp=sharing
+# - random_forest_model.pt (255MB): https://drive.google.com/file/d/18uyO3lZ8Z8mAsYmhObMEYtBm0BZ4cog1/view?usp=sharing
+./download_models.sh
+
+# Step 6: Run analysis command
 python3 ./artifact/ProtoReveal/analysis.py artifact/data/NUC230240/NUC240_ADC_Median_Filter.bin armcortexm predict 0x40000000 0x5FFFFFFF
 
-# Step 5: Run test command
+# Step 7: Run test command
 python3 ./artifact/ProtoReveal/test.py LoadFuncToSRAM.bin test
 
-# Step 6: Run prediction command
+# Step 8: Run prediction command
 python3 ./artifact/ProtoReveal/train/Predict_.py
 
-# Step 7: Check output files
+# Step 9: Check output files
 ls -la *.csv *.json
 ```
 

@@ -7,20 +7,27 @@
 
 ## Quick Start
 
-### 1. Start the container
+### 1. Clone and navigate to repository
+```bash
+git clone https://github.com/BayanTurki/ProtoReveal-main.git
+cd ProtoReveal-main
+```
+
+### 2. Start the container
 ```bash
 docker-compose up --build -d
 ```
 
-### 2. Download ML models (REQUIRED FIRST)
+### 3. Download ML models (REQUIRED FIRST)
 ```bash
 # Download models from Google Drive
 docker exec -it protoreveal-ae /app/download_models.sh
 ```
 
-### 3. Execute analysis commands
+### 4. Execute analysis commands
 ```bash
 # Analysis command
+# Note: angr warnings are normal and expected - just wait for results
 python3 ./artifact/ProtoReveal/analysis.py artifact/data/NUC230240/NUC240_ADC_Median_Filter.bin armcortexm predict 0x40000000 0x5FFFFFFF
 
 # Test command
@@ -30,7 +37,7 @@ python3 ./artifact/ProtoReveal/test.py LoadFuncToSRAM.bin test
 python3 ./artifact/ProtoReveal/train/Predict_.py
 ```
 
-### 4. Copy output files
+### 5. Copy output files
 ```bash
 # Copy output files from container to host
 docker cp protoreveal-ae:/app/prediction.csv .
@@ -40,7 +47,7 @@ docker cp protoreveal-ae:/app/New_Level3_depth.csv .
 docker cp protoreveal-ae:/app/Result_1.csv .
 ```
 
-### 5. Stop the container
+### 6. Stop the container
 ```bash
 docker-compose down
 ```
