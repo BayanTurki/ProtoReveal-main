@@ -1,0 +1,10 @@
+angr==9.2.63
+cle==9.2.63
+pyvex==9.2.63
+archinfo==9.2.63
+joblib==1.4.2
+networkx==3.2.1
+pandas==1.5.3
+scikit-learn==1.3.0
+capstone==4.0.2
+numpy==1.23.5

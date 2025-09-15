@@ -1,0 +1,32 @@
+ProtoReveal Intended Use and Limitations
+=========================================
+
+INTENDED USE
+------------
+ProtoReveal is designed for:
+- Static analysis of ARM Cortex-M and MIPS firmware binaries
+- Automatic detection of peripheral access patterns
+- Prediction of communication protocols used by firmware
+- Expediting firmware reverse engineering workflows
+- Research in embedded systems security
+
+
+TARGET AUDIENCE
+---------------
+- Security researchers
+- Reverse engineers
+- Embedded systems developers
+
+SUPPORTED PLATFORMS
+-------------------
+- Ubuntu 22.04 LTS (primary)
+- Docker containers
+- Other Linux distributions (with dependency adjustments)
+
+SUPPORTED FIRMWARE
+------------------
+- ARM Cortex-M and MIPS architectures
+- Binary (.bin) and ELF (.elf) formats
+
+
+

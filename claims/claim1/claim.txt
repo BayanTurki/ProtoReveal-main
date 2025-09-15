@@ -1,0 +1,21 @@
+Claim 1: Basic Functionality and Communication Protocol Prediction
+================================================================
+
+This claim demonstrates that ProtoReveal can successfully:
+1. Load and analyze firmware binaries
+2. Detect peripheral memory accesses within specified address ranges
+3. Predict communication protocols used by firmware
+4. Generate structured output data (CSV files)
+5. Complete analysis without crashing
+
+The experiment uses representative firmware samples to validate:
+- NUC230240/NUC240_ADC_Median_Filter.bin for analysis command
+- LoadFuncToSRAM.bin for test command
+- Peripheral access pattern detection
+- Communication protocol prediction
+- Feature extraction and data generation
+- End-to-end tool functionality
+
+Expected outcome: Successful analysis with generated CSV files containing peripheral access data, communication protocol predictions, and feature matrices.
+
+

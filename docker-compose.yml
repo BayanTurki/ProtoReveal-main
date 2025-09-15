@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  protoreveal:
+    build: .
+    container_name: protoreveal-ae
+    volumes:
+      - .:/app
+      - ./artifact:/app/artifact
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    mem_limit: 4g
+    memswap_limit: 4g
+
+
