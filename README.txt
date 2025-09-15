@@ -216,8 +216,3 @@ CONTACT
 For questions about this artifact, contact the authors.
 Email: Turkistani.3@buckeyemail.osu.edu
 
-LIMITATIONS
------------
-- Requires ARM Cortex-M firmware binaries
-- Some complex firmware may produce minimal results
-- Analysis time varies by firmware complexity
