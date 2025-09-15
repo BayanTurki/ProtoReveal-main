@@ -1,4 +1,4 @@
-ProtoReveal Intended Use and Limitations
+ProtoReveal Intended Use
 =========================================
 
 INTENDED USE
