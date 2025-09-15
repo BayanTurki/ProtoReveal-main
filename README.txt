@@ -191,6 +191,22 @@ REPRODUCIBILITY CLAIMS
 ----------------------
 See claims/ directory for specific reproducibility experiments.
 
+### Running Claims Validation
+To validate that the artifact works correctly, run the claims validation script:
+
+```bash
+# Make script executable (if needed)
+chmod +x claims/claim1/run.sh
+
+# Run claims validation
+./claims/claim1/run.sh
+```
+
+**Expected output:**
+- All tests pass with ✓ marks
+- "All tests completed successfully!" message
+- Validates analysis, test, and prediction commands
+
 LICENSE
 -------
 See license.txt for licensing information.
