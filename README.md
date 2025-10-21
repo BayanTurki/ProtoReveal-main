@@ -1,4 +1,4 @@
-# ProtoReveal: Recovering Peripheral Maps and Protocols to Expedite Firmware Reverse Engineering
+## ProtoReveal: Recovering Peripheral Maps and Protocols to Expedite Firmware Reverse Engineering
 ==============================================================================================
 
 ## Overview
