@@ -1,12 +1,8 @@
 # ProtoReveal
 
-A tool for predicting useful information about MMIO registers used by firmware.
 
-## 🚨 **FOR ACSAC 2025 REVIEWERS** 🚨
-
-**Please use `README.txt` for artifact evaluation instructions!**
-
-This `README.md` is for general project information. For ACSAC 2025 artifact evaluation, please refer to `README.txt` which contains the complete installation and usage instructions following ACSAC requirements for the artifact submission.
+## Overview
+ProtoReveal is a static analysis tool that automatically identifies peripheral access patterns and predicts communication protocols in firmware binaries to expedite reverse engineering.  
 
 ---
 
