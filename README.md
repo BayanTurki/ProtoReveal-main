@@ -1,5 +1,5 @@
-## ProtoReveal: Recovering Peripheral Maps and Protocols to Expedite Firmware Reverse Engineering
-==============================================================================================
+# ProtoReveal
+
 
 ## Overview
 ProtoReveal is a static analysis tool that automatically identifies peripheral access patterns and predicts communication protocols in firmware binaries to expedite reverse engineering.  
